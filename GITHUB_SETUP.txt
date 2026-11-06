@@ -1,0 +1,4 @@
+Repository name: social-media-engagement-analysis
+Description: SQL analysis of social media engagement, creator activity, inactive users, and hashtag performance.
+Suggested topics: sql, mysql, data-analysis, social-media-analytics, user-engagement, portfolio-project
+Suggested visibility: Public (only if you are comfortable sharing the project files).
