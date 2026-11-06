@@ -1,0 +1,240 @@
+Social Media — Task Sheet
+Instructions: Do not change the question text. Write your answer directly below each question. For Objective questions, the expected output columns and row counts are given below the question. For Subjective questions, no such details are given, work out and write the answer on your own.
+Objective Questions
+Q1 Are there any tables with duplicate or missing null values? If so, how would you handle them?
+users — rows with NULL username
+Output columns (in order): id, username, created_at  (3 columns)
+Row count: Varies — this is what O1 is asking you to determine. Run the query and report what you find.
+ 
+ 
+Row count: 0 rows. This means that there are no rows with null usernames. 
+users — duplicate usernames
+Output columns (in order): username, count  (2 columns)
+Row count: Varies — this is what O1 is asking you to determine. Run the query and report what you find.
+ 
+ 
+Row count: 0 rows. This means there are no duplicate usernames.
+photos — rows with NULL image_url / user_id / created_dat
+Output columns (in order): id, image_url, user_id, created_dat  (4 columns)
+Row count: Varies — this is what O1 is asking you to determine. Run the query and report what you find.
+ 
+ 
+Row count: 0 rows. This means there are no rows with null image_url, user_id, or created_dat.
+photos — duplicate (image_url, user_id) pairs
+Output columns (in order): image_url, user_id, count  (3 columns)
+Row count: Varies — this is what O1 is asking you to determine. Run the query and report what you find.
+ 
+ 
+Row count: 0 rows. This means there are no duplicate image_url or user_id.
+comments — rows with NULL comment_text / user_id / photo_id / created_at
+Output columns (in order): id, comment_text, photo_id, user_id, created_at  (5 columns)
+Row count: Varies — this is what O1 is asking you to determine. Run the query and report what you find.
+ 
+ 
+Row count: 0 rows. This means there are no rows with null comment_text or user_id or photo_id or created_at.
+comments — duplicate (comment_text, user_id, photo_id) triples
+Output columns (in order): comment_text, user_id, photo_id, count  (4 columns)
+Row count: Varies — this is what O1 is asking you to determine. Run the query and report what you find.
+ 
+ 
+Row count: 0 rows. This means there are no duplicates comment_text, user_id, and photo_id
+likes — rows with NULL user_id / photo_id / created_at
+Output columns (in order): user_id, photo_id, created_at  (3 columns)
+Row count: Varies — this is what O1 is asking you to determine. Run the query and report what you find.
+ 
+ 
+Row count: 0 rows. This means there are no rows with a NULL user_id or photo_id or created_at.
+likes — duplicate (user_id, photo_id) pairs
+Output columns (in order): user_id, photo_id, count  (3 columns)
+Row count: Varies — this is what O1 is asking you to determine. Run the query and report what you find.
+ 
+ 
+Row count: 0 rows. This means there are no duplicate user_id, and photo_id
+follows — rows with NULL follower_id / followee_id / created_at
+Output columns (in order): follower_id, followee_id, created_at  (3 columns)
+Row count: Varies — this is what O1 is asking you to determine. Run the query and report what you find.
+ 
+ 
+Row count: 0 rows. This means there are no rows with a NULL follower_id, followee_id, created_at.
+follows — duplicate (follower_id, followee_id) pairs
+Output columns (in order): follower_id, followee_id, count  (3 columns)
+Row count: Varies — this is what O1 is asking you to determine. Run the query and report what you find.
+ 
+ 
+Row count: 0 rows. This means there are no duplicate follower_id and followee_id.
+Q2 What is the distribution of user activity levels (e.g., number of posts, likes, comments) across the user base?
+Output columns (in order): user_id, username, total_posts, total_likes_given, total_comments_made  (5 columns)
+Row count: 100 rows (verified — 1 row per user).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Row count: 100 rows
+Q3 Calculate the average number of tags per post (photo_tags and photos tables).
+Output columns (in order): AverageTags  (1 column)
+Row count: 1 row (single aggregate value).
+ 
+ 
+Row count: 1 row
+Q4 Identify the top users with the highest engagement rates (likes, comments) on their posts and rank them.
+Output columns (in order): user_id, Total, rnk  (3 columns)
+Row count: 74 rows (verified — 1 row per photo-owner whose photos have ≥1 like AND ≥1 comment).
+ 
+ 
+ 
+Row count: 74 rows
+Q5 Which users have the highest number of followers and followings?
+Output columns (in order): user_id, username, followers, following  (4 columns)
+Row count: 100 rows (verified — 1 row per user).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Q6 Calculate the average engagement rate (likes, comments) per post for each user.
+Output columns (in order): id, username, avg_engagement  (3 columns)
+Row count: 74 rows (verified — 1 row per user who has posted ≥1 photo).	
+ 
+ 
+Q7 Get the list of users who have never liked any post (users and likes tables)
+Output columns (in order): id, username  (2 columns)
+Row count: 23 rows (verified).
+ 
+Q8 How can you leverage user-generated content (posts, hashtags, photo tags) to create more personalized and engaging ad campaigns?
+Output columns (in order): user_id, username, tag_name, tag_usage, total_likes_received, total_comments_received, total_engagement  (7 columns)
+Row count: 459 rows (verified — 1 row per user/tag combination that appears in that user's posts).
+ 
+ 
+ 
+ 
+A graph showing trending hashtags.
+
+Q9 Are there any correlations between user activity levels and specific content types (e.g., photos, videos, reels)? How can this information guide content creation and curation strategies?
+Output columns (in order): user_id, total_posts, total_likes, total_comments, total_engagement  (5 columns)
+Row count: 74 rows (verified — 1 row per user_id with ≥1 photo).
+ 
+ 
+ 
+Q10 Calculate the total number of likes, comments, and photo tags for each user.
+Output columns (in order): user_id, username, total_likes, total_comments, total_tags  (5 columns)
+Row count: 100 rows (verified — 1 row per user).
+ 
+ 
+Q11 Rank users based on their total engagement (likes, comments, shares) over a month.
+Output columns (in order): user_id, username, likes_given, comments_made, total_engagement, engagement_rank  (6 columns)
+Row count: 100 rows (verified — 1 row per user).
+ 
+ 
+
+Q12 Retrieve the hashtags that have been used in posts with the highest average number of likes. Use a CTE to calculate the average likes for each hashtag first.
+Output columns (in order): tag_id, tag_name, avg_likes_per_photo, total_likes, total_photos  (5 columns)
+Row count: 10 rows (LIMIT 10; 21 tags exist in total, so the limit is reached).
+ 
+ 
+Q13 Retrieve the users who have started following someone after being followed by that person.
+Output columns (in order): id, username  (2 columns)
+Row count: 77 rows (verified).
+ 
+  
+
+Subjective Questions
+Q1 Based on user engagement and activity levels, which users would you consider the most loyal or valuable? How would you reward or incentivize these users? 
+Using the following SQL query, we can calculate active users who are also top users in terms of likes given and received, comments on posts and on posts they commented on, ultimately assigning them a score on basis of their activity to actively sort loyal and valuable consumers.
+ 
+ 
+The following results were obtained: 
+ 
+These are the top 20 users who can be categorized as loyal or valuable. To incentivise them, we can give them an ‘IG top 20 badge’, give them premium features such as Instagram Plus or offer exclusive features for their long-term commitment. Early access to updates can also be one way to reward them. Giving them exclusive IG merchandise can boost their confidence in the app and help promote the company. Loyalty should be based on repeat activity over time, rather than the number of likes or comments solely. Also, the metrics should be normalised so that frequent posters don’t overshadow people with good range but moderate to lower frequency.
+Q2 For inactive users, what strategies would you recommend to re-engage them and encourage them to start posting or engaging again?
+For inactive users, we first filtered accounts that have shown no activity over 60 days, or have just created an account and have not used it at all, i.e zero engagement with any post or comment, by executing the following query: 
+ 
+The following accounts were reported with null or zero activity:
+ 
+These 13 accounts have shown zero engagement since the date of creation. To re-engage these accounts, we can see their time spent on the account rather than check for activity and see how much time they spent on which posts, so we can suggest more related content based on their preferences. New users should be helped with onboarding and profile setup prompts and account suggestions. For previously active users, relevant content recommendations should be given, or optional reminders, using the latest timestamps across different activities since the account activation date is not sufficient to see when the user was last active.
+Q3 Which hashtags or content topics have the highest engagement rates? How can this information guide content strategy and ad campaigns?
+Using the SQL query, we determined the popular and frequently used hashtags, referred to as ‘Trending ’:
+ 
+Using hashtags such as those from the result table given below: 
+ 
+We can suggest these trending hashtags to people while they post in order to increase consumer engagement. By promoting these hashtags to content creators and celebrities, we can keep the hashtags trending or generate a content strategy. Making ads centred around trending hashtags will encourage users to use the hashtags more in order to interact more or widen their account reach. Using ad campaigns, one can also create brand merchandise for the most popular hashtags and generate revenue on app goods. Minimum sample size and engagement distribution should be considered to normalise high averages on small samples.
+Q4 Are there any patterns or trends in user engagement based on demographics (age, location, gender) or posting times? How can these insights inform targeted marketing campaigns?
+The following query tells us about the posting hour at which the users posted a picture, and the insights obtained from it, such as average comments per post, average number of likes received and number of posts.
+ 
+ 
+ 
+This chart is the pictorial representation of the table containing the average statistics of the profile of a varied number of usernames on a specific date. The supplied schema has no age, location, gender, or posting-time analytics beyond timestamps, and it contains no demographic attributes. Therefore, demographic correlations cannot be established from these tables. If reliable, consented demographic data were available, compare engagement by segment and time period, protect privacy, and avoid sensitive targeting. Posting-time analysis could group posts by hour/day and compare engagement per post. Report the number of posts for each time period so small groups do not appear artificially successful, and one should not infer demographics from usernames or content.
+Q5 Based on follower counts and engagement rates, which users would be ideal candidates for influencer marketing campaigns? How would you approach and collaborate with these influencers?
+Using the following SQL script, we found the top 20 users whose follower count was highly proportional to their engagement rates such as average engagement per post and ranked them overall.
+ 
+ 
+The following table was obtained, which lists the top 20 users.
+ 
+These 20 users would be ideal for campaigning since the number of people actually engaging with them is proportionate to the number of followers, rather than just having followers with zero posts or a lower engagement rate. It is safe to say that the people who follow these users actively engage with them, making them ideal for brand promotion and ad campaigns. The selection criteria can be improved by: 
+•	Calculate engagement per post and, where available, engagement relative to follower count.
+•	Check consistency across multiple posts instead of selecting users from one high-performing post.
+•	Assess hashtag or topic relevance to the campaign.
+•	Consider audience authenticity, brand suitability, and potential reach.
+•	Evaluate campaign outcomes using tracked clicks, conversions, or other defined objectives.
+Q6 Based on user behavior and engagement data, how would you segment the user base for targeted marketing campaigns or personalized recommendations?
+The following SQL query segments the data based on their activity.
+ 
+ 
+The script analyses the possible segments that contain highly active creators, users with highly engaged viewers (likes and comments), popular creators that received high engagement, hashtag-specific groups, new users and inactive users. Setting a baseline threshold to identify the users to build segments from activity counts and preferences that personalise the ad campaign or design campaigns centred around the user. 
+ 
+ 
+ 
+Each segment leads to a different product or marketing decision: 
+•	Active creators: creation tools and creator education.
+•	Active engagers: personalized discovery and community recommendations.
+•	New or inactive users: onboarding and carefully timed reactivation.
+•	Topic-specific users: relevant content suggestions and topic-based campaigns.
+Q7 If data on ad campaigns (impressions, clicks, conversions) is available, how would you measure their effectiveness and optimize future campaigns?
+We can calculate click-through rate (CTR = clicks/impressions), conversion rate (conversions/clicks), cost per click, cost per acquisition, and return on ad spend when cost and revenue data are available. Compare campaigns by audience, creative, placement, and tag/topic; use A/B tests with a defined success metric; allocate budget toward proven variants; and check attribution windows, sample sizes, and statistical uncertainty with help of the script given below:
+ 
+What we can add: 
+•	Define each metric precisely and ensure the required data is available.
+•	Compare campaigns using the same attribution window and comparable audiences.
+•	Include a conversion definition, campaign costs, and revenue where applicable.
+•	Use controlled experiments to test whether an observed improvement is caused by the campaign.
+•	Consider statistical uncertainty before reallocating a large budget based on small differences.
+Q8 How can you use user activity data to identify potential brand ambassadors or advocates who could help promote Instagram's initiatives or events?
+To identify potential brand ambassadors or advocates to promote initiatives and events, we will look for users who are consistently active, create content that receives meaningful engagement, participate in relevant tag communities, and interact constructively with others. Combine follower counts with engagement quality and topic relevance, then manually review suitability and obtain consent before outreach. Offer clear expectations, event access or creator features, and transparent disclosure guidelines.
+ 
+ 
+ 
+One thing we should be careful of is to differentiate a brand ambassador from a high-engagement creator. An advocate may have a smaller audience but stronger community trust and consistent participation.
+•	Rank candidates using topic relevance, engagement consistency, constructive interactions, and content quality.
+•	Invite shortlisted users to participate voluntarily.
+•	Define campaign objectives and track attributable results.
+•	Obtain permission before reusing user-generated content in advertisements and clearly disclose sponsored partnerships.
+Q9 How would you approach this problem if the objective and subjective questions weren't given?
+We will start by clarifying the business goal and available data. Using the SQL script, we will: 
+•	We will inspect table schemas, primary/foreign keys, date ranges, row counts, nulls, duplicates, and data quality. Define measurable metrics such as active users, posts per user, likes/comments given and received, follower counts, tag usage, and engagement per post. 
+•	Write validation queries, avoid join fan-out by aggregating each activity table before joining, segment users, visualise distributions and trends, and turn findings into testable recommendations.
+•	Document limitations and distinguish correlation from causation.
+
+ 
+ 
+ 
+What can be improved: 
+•	Define the decision the analysis needs to support.
+•	Validate primary keys, foreign keys, missing values, duplicates, and timestamp ranges.
+•	Define each metric and its denominator before writing queries.
+•	Explore distributions, outliers, and user cohorts.
+•	Test hypotheses, document uncertainty, and recommend measurable interventions.
+•	Re-evaluate results after interventions to determine whether outcomes improved.
+Q10 Assuming there's a "User_Interactions" table tracking user engagements, how can you update the "Engagement_Type" column to change all instances of "Like" to "Heart" to align with Instagram's terminology?
+Since the question is on database maintenance rather than a marketing analysis, we can Briefly explain data integrity and safe updates. The UPDATE statement in SQL is used to modify existing records in a database without creating new rows. In this scenario, if a User_Interactions table contains an Engagement_Type column with the value 'Like', we can replace it with 'Heart' to align the terminology with Instagram's naming conventions.
+Before performing the update, it is important to verify that the specified table and column exist and identify the records that will be affected. A WHERE clause should be used to ensure that only rows where Engagement_Type = 'Like' are modified, leaving other engagement types unchanged.
+For example, the following SQL statement performs the update:
+ 
+After executing the query, the affected rows should be verified by checking whether any records still contain the old value and confirming that the intended records now contain 'Heart'. For important databases, the update should be performed within a transaction where supported, allowing the change to be reviewed before it is committed.
+This operation demonstrates the practical use of SQL's data manipulation capabilities and highlights the importance of data consistency, accuracy, and controlled database modifications. Maintaining consistent terminology helps ensure that reports, queries, and downstream applications interpret engagement types correctly.
+
+
+
